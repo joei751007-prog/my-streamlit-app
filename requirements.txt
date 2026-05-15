@@ -2,5 +2,4 @@
 pandas
 selenium
 webdriver-manager
-sqlite3
 streamlit-autorefresh
