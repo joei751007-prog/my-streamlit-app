@@ -41,7 +41,8 @@ if not st.session_state.login:
 
     if st.button("登入"):
 
-        if password == "admin123":
+        # 🔐 改這裡：不要寫死密碼
+        if password == st.secrets["password"]:
 
             st.session_state.login = True
 
