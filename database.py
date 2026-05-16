@@ -1,9 +1,11 @@
 import sqlite3
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 import pandas as pd
 
 DB_NAME = "tasks.db"
 
+# 建立台灣時區 (UTC+8)
+tw_tz = timezone(timedelta(hours=8))
 
 def get_connection():
     return sqlite3.connect(DB_NAME, check_same_thread=False)
@@ -57,7 +59,7 @@ def request_task(task_id):
     conn = get_connection()
     cursor = conn.cursor()
 
-    request_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    request_time = datetime.now(tw_tz).strftime("%Y-%m-%d %H:%M:%S")
 
     cursor.execute(
         """
@@ -81,7 +83,7 @@ def complete_task(task_id):
     conn = get_connection()
     cursor = conn.cursor()
 
-    execute_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    execute_time = datetime.now(tw_tz).strftime("%Y-%m-%d %H:%M:%S")
 
     cursor.execute(
         """
@@ -141,7 +143,7 @@ def update_robot_check_time():
     conn = get_connection()
     cursor = conn.cursor()
 
-    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    current_time = datetime.now(tw_tz).strftime("%Y-%m-%d %H:%M:%S")
 
     cursor.execute(
         """
@@ -183,7 +185,7 @@ def robot_check_in():
     conn = get_connection()
     cursor = conn.cursor()
 
-    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    current_time = datetime.now(tw_tz).strftime("%Y-%m-%d %H:%M:%S")
 
     cursor.execute(
         """
