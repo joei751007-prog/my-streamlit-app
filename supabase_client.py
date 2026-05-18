@@ -1,6 +1,7 @@
+import os
 from supabase import create_client
 
-SUPABASE_URL = "你的URL"
-SUPABASE_KEY = "你的anon key"
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
