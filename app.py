@@ -17,7 +17,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("定位任務系統")
+st.title("PIAYIXIA定位任務系統_V1.0_By沒時間玩咚奇剛")
 
 # =========================
 # 自動刷新（放這裡）
