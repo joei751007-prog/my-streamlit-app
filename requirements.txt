@@ -2,3 +2,4 @@
 pandas
 streamlit-autorefresh
 supabase
+python-dotenv
