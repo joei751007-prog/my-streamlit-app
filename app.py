@@ -115,7 +115,7 @@ def format_time(iso_string):
 top_col1, top_col2, top_col3, top_col4 = st.columns([6, 1.5, 1, 1])
 
 with top_col1:
-    st.title("📡 PIAYIXIA定位任務系統_大雅版_V2.0")
+    st.title("📡 PIAYIXIA定位任務系統_V3.0")
     robot_time = get_robot_check_time()
     st.info(f"🤖 Robot 最後巡邏時間：{robot_time}")
 
